@@ -20,6 +20,8 @@ function createGrid(number){
         container.appendChild(div);
         div.classList.add('child');
         div.style.border='solid 2px red';
+        div.style.width=960/number + 'px';
+        div.style.height=960/number + 'px';
 
      }
    }
