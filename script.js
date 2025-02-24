@@ -14,6 +14,7 @@ button.addEventListener('click',()=>{
 
 //CREATE A NEW GRID 
 function createGrid(number){
+
    for(let i=0;i<number;i++){
      for(let j=0;j<number;j++){
         div=document.createElement('div');
@@ -27,13 +28,27 @@ function createGrid(number){
    }
 
    container.childNodes.forEach(element => {
+      element.dataset.opacity=0;
+      
       element.addEventListener('mouseover',()=>{
-        element.style.backgroundColor='red';
-      })
-   });
+           
+           let currentOpacity=parseFloat(element.dataset.opacity);
+           if(currentOpacity<1){
+            currentOpacity+=0.1;
+           }
+            element.dataset.opacity=currentOpacity;
+            element.style.backgroundColor=`rgba(${randomRgb()},${currentOpacity})`;
 
+      })
+      
+   });
+ 
 }
 
+
+function randomRgb(){
+ return  Math.round(Math.random()*255) + ',' + Math.round(Math.random()*255) + ',' + Math.round(Math.random()*255);
+}
 
 
 
