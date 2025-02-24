@@ -20,7 +20,7 @@ function createGrid(number){
         div=document.createElement('div');
         container.appendChild(div);
         div.classList.add('child');
-        div.style.border='solid 2px red';
+        div.style.border='solid 0.1px black';
         div.style.width=960/number + 'px';
         div.style.height=960/number + 'px';
 
